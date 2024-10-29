@@ -4,7 +4,7 @@ class CommandContext:
     def __init__(self):
         self.strategies = {}
 
-    def register_strategy(self, name: str, strategy_class):
+    def register_strategy(self, name: str, strategy_class: CommandStrategy):
         self.strategies[name] = strategy_class
 
     async def execute_strategy(self, command_name: str, message, args):
