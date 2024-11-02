@@ -1,4 +1,4 @@
-from command_context import command_context
+from utils.command_context import command_context
 
 def command(name):
     def decorator(cls):

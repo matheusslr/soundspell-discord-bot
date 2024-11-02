@@ -1,5 +1,5 @@
 import discord
-from command_context import command_context
+from utils.command_context import command_context
 from strategies.base_command import CommandStrategy
 from utils.decorators import command
 
