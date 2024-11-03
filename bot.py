@@ -7,6 +7,7 @@ from utils.command_context import command_context
 command_modules = [
     'strategies.general.help_command',
     'strategies.general.sound.play_command',
+    'strategies.general.disconnect_command',
     'strategies.rpg.roll_dice',
     'strategies.admin.clear_command'
 ]
@@ -26,7 +27,7 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
 
 @client.event
-async def on_message(message):
+async def on_message(message: discord.Message):
     if message.author == client.user:
         return
 
