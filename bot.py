@@ -1,10 +1,18 @@
 import discord
+import importlib
 import os
 from dotenv import load_dotenv
 from utils.command_context import command_context
-from strategies.general.help_command import HelpCommand
-from strategies.rpg.roll_dice import RollDiceCommand
-from strategies.general.play_command import PlayCommand
+
+command_modules = [
+    'strategies.general.help_command',
+    'strategies.general.sound.play_command',
+    'strategies.rpg.roll_dice',
+    'strategies.admin.clear_command'
+]
+
+for module in command_modules:
+    importlib.import_module(module)
 
 load_dotenv()
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
